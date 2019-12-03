@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+#define N 5
+
+int main()
+{
+  int data[N];
+  int tmp;
+  int min_idx;
+  int i,j;
+
+  printf("Please input %d numbers\n", N);
+  for(i = 0; i < N; i++)
+    scanf("%d", &data[i]);
+
+  for(i = 0; i < N - 1; i++){
+    min_idx = i;
+    for(j = i + 1; j < N; j++){
+      if(data[j] < data[min_idx]) min_idx = j;
+    }
+    tmp = data[i];
+    data[i] = data[min_idx];
+    data[min_idx] = tmp;
+  }
+
+  printf("Sorted data\n");
+  for(i = 0; i < N; i++) {
+    printf("%d\n", data[i]);
+  }
+  return 0;
+}

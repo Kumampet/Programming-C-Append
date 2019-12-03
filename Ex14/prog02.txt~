@@ -1,0 +1,9 @@
+単体テスト
+gcc -DTEST main02.c
+gcc -DTEST calc02.c
+
+結合テスト
+gcc -c main.c
+gcc -c calc.c
+gcc main.o calc.o
+

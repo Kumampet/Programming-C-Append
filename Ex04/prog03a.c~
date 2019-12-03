@@ -1,0 +1,17 @@
+#include <stdio.h>
+#define n 100
+
+int main(){
+  char str_1[N], str_2[N],;//文字列用バッファ
+
+  //----入力処理----
+  printf("Input : ");
+  scanf("%s",str_1);
+
+  //----コピー処理----
+
+  //----出力処理----
+  printf("{%s}\n",str_1);
+
+  return 0;
+}

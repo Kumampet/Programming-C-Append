@@ -1,0 +1,4 @@
+prog03_main.c の単体試験
+
+input_planet の戻り値が0の場合（正常）:gcc -DTEST0 prog03_main.c
+input_planet の戻り値が-1の場合（異常）:gcc -DTEST1 prog03_main.c

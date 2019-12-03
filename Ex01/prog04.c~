@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+char vowelxchg(char);
+
+int main(){
+  char c;
+  while(1){
+    scanf("%c",&c);
+    c = vowelxchg(c);
+  }
+  return 0;
+}
+
+char vowelxchg(char c){
+  char ch;
+
+  if('A'<= c && c <= 'Z'){
+  ch = c+32;
+  }else ch=c-32;
+  
+  return ch;
+}

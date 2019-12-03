@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void PrintData1(Record);
+//void PrintData2(Record *);
+
+typedef struct{
+int  id;       /* ID    */
+char name[20]; /* 名前   */
+int  score;    /* 点数   */
+char grade;    /* 成績 　*/
+} Record;
+
+int main(){
+int i;
+/* 以下の構造体の初期化はmain()の中に書くこと */
+Record person1={1250050, Kumamoto, 50, C}, person2={1259999, Sample, 100, A };
+
+for(i=0; i<2; i++){
+PrintData1(person[i]);
+}
+return 0;
+}
+}
+

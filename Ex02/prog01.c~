@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+double seqavg(double,int);
+
+int main(){
+  int i=1,status;
+  double n,avg;
+
+  while(1){
+    printf("数値を入力してください：");
+    status = scanf("%lf",&n);
+    avg = seqavg(n,i);
+    if(status != 1){
+      break;
+    }
+    printf("入力回数：%d ",i);
+    printf("ここまでの平均=%lf\n",avg);
+    i++;
+  }
+
+  printf("最終的な平均値は%lfです。\n",avg);
+  return 0;
+}
+
+double seqavg(double n, int i){
+  static double avg;
+  avg = (avg*(i-1)+n)/i;
+  return avg;
+}

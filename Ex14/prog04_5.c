@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include "prog04_1.h"
+
+#ifdef TEST
+int main()
+{
+  GetTriangleArea(&abc[0]);
+  printf("area=%lf\n",abc[0].s);
+  return 0;
+}
+#endif
+
+void GetTriangleArea(Point *p)
+{
+  p->s=((p->cx-p->bx)*(p->ay-p->by)-(p->cy-p->by)*(p->ax-p->bx))/2.0;
+  if(p->s < 0) p->s=-p->s;
+}

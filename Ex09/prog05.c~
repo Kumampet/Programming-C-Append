@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define NMAX 20                       /* maximum number of buses */
+#define NSTOP 6                       /* number of bus stops in data file */
+#define UNDEF -999                    /* value for undefined data */
+
+typedef struct{
+  char colstr[8];
+  int number; //便名
+  char company[8]; //運行会社
+  char stopname[NSTOP][12]; //停留所名
+  int time[NSTOP];
+  int hour[NSTOP];
+  int min[NSTOP];
+}Businfo;
+
+  
+int main(int elm, char *argv[]){
+  FILE *fp;
+  int i,j;
+  Businfo data[NMAX];
+  
+  //ファイル展開
+  if(fp = fopen(*argv[1], "r")==NULL){
+    fprintf(stderr, "FILE OPEN ERROR!!\n");
+    exit(0);
+  }
+
+  //数値代入
+  for(j=0; j<NMAX; j++){
+    if(j==0){
+      fscanf(*argv[1],"%s",colstr1);
+    }else{
+      fscanf(*argv[1],"%d %s %d %d %d %d %d %d %d %d",&data[j].number,
+	     data[j].company, data[j].time[0], data[j].time[1], data[j].time[2],
+	     data[j].time[3], data[j].time[4], data[j].time[], data[j].time[0],);
+    }
+  }
+  
+  return 0;
+}

@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <math.h>
+
+#define RAD M_PI_2
+
+typedef struct {
+  double  x; /* x座標 */
+  double  y; /* y座標 */
+} Point;
+
+Point rotate_90_3(Point *);
+//void rotate_90_4(Point *);
+//void rotate_90_5(Point, Point);
+
+int main(){
+  Point p = {4.0, 1.0},{6.0, 4.0};
+  Point p3, p4, p5;
+
+  p3 = rotate_90_3(&p);
+  
+  return 0;
+}
+
+Point rotate_90_3(Point *p[]){
+  Point ans;
+
+  ans.x = (cos(RAD)*(p[1]->x-p[0]->x)) + (-sin(RAD)*(p[1]->x-p[0]->y));
+  //ans.y = (sin(RAD)*(p.x-center.x)) + (cos(RAD)*(p.y-center.y));
+  return ans;
+}
+
+/*Point rotate_90_1(Point center, Point p){
+  Point ans;
+
+  //---公式通りの計算----
+  //----原点へ移動させて計算----
+  ans.x = (cos(RAD)*(p.x-center.x)) + (-sin(RAD)*(p.y-center.y));
+  ans.y = (sin(RAD)*(p.x-center.x)) + (cos(RAD)*(p.y-center.y));
+
+  //----移動させた分だけもどす
+  ans.x = ans.x+center.x;
+  ans.y = ans.y+center.y;
+  
+  return ans;
+}
+
+void rotate_90_2(Point center, Point *p){
+  Point temp;
+
+  //----ポインタの書き換え誤爆防止のtempにコピー
+  temp = *p;
+  //----以下の計算原理はp1のときと同じ
+  p->x = (temp.x-center.x)* cos(RAD) + (temp.y-center.y) * (-sin(RAD));
+  p->y = (temp.x-center.x) * sin(RAD) + (temp.y-center.y) * cos(RAD);
+
+  p->x = p->x + center.x;
+  p->y = p->y + center.y;
+}
+*/
